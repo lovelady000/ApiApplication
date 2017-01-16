@@ -58,12 +58,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Infrastructure\DbFactory.cs" />
+    <Compile Include="Infrastructure\Disposable.cs" />
+    <Compile Include="Infrastructure\IDbFactory.cs" />
+    <Compile Include="Infrastructure\IRepository.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\RepositoryBase.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
     <Compile Include="Migrations\201701100753031_first-migration.cs" />
     <Compile Include="Migrations\201701100753031_first-migration.Designer.cs">
       <DependentUpon>201701100753031_first-migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701160734365_Add-refresh-token.cs" />
+    <Compile Include="Migrations\201701160734365_Add-refresh-token.Designer.cs">
+      <DependentUpon>201701160734365_Add-refresh-token.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ClientRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Application.Common\Application.Common.csproj">
@@ -79,13 +91,13 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Infrastructure\" />
-    <Folder Include="Repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201701100753031_first-migration.resx">
       <DependentUpon>201701100753031_first-migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701160734365_Add-refresh-token.resx">
+      <DependentUpon>201701160734365_Add-refresh-token.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

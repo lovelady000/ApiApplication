@@ -19,6 +19,10 @@ namespace Application.Data
 
         public DbSet<ApplicationUserGroup> ApplicationUserGroups { set; get; }
 
+        public DbSet<Client> Clients { set; get; }
+
+        public DbSet<RefreshToken> RefreshTokens { set; get; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
