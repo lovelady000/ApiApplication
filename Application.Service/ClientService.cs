@@ -13,6 +13,8 @@ namespace Application.Service
     {
         Client Add(Client client);
 
+        IEnumerable<Client> GetAll();
+
         void Save();
     }
     public class ClientService : IClientService
@@ -30,6 +32,10 @@ namespace Application.Service
         {
             var clientResult = _clientRepository.Add(client);
             return clientResult;
+        }
+        public IEnumerable<Client> GetAll()
+        {
+            return _clientRepository.GetAll();
         }
 
         public void Save()
